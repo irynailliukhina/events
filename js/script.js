@@ -18,19 +18,19 @@ document.addEventListener('keydown', function (event) {
     if ((event.code == 'KeyE' || event.code == 'Keye') && (event.ctrlKey || event.metaKey)) {
         event.preventDefault();
         console.log('works');
-        valNew = val
-        console.log(valNew)
 
         document.querySelector(".textfield").style.display = "none";
         document.querySelector("#editor").style.display = "block";
-        val = document.querySelector('#editor').innerText;
+        document.querySelector('#editor').innerText = val;
 
+        console.log(document.textarea.value)
 
-    } else if ('Key+' && (event.ctrlKey || event.metaKey)) {
-        val = document.querySelector('#editor').innerText;
+    } else if (event.code === "Comma" && (event.ctrlKey || event.metaKey)) {
+        document.querySelector(".textfield").innerHTML = document.querySelector("#editor").value;
         document.querySelector(".textfield").style.display = "block";
         document.querySelector("#editor").style.display = "none";
     }
+
 })
 
 //2.Создать HTML - страницу с большой таблицей.При клике по заголовку колонки, 
